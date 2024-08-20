@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+use Console\ConsoleCommandManager;
+require_once "init.php";
+require_once "utils.php";
+
+$consoleManager = new ConsoleCommandManager(array_slice($argv, 2));
+$command = $argv[1];
+
+$commandExecutor = $consoleManager->getCommand($command);
+if ($commandExecutor == null) {
+    echoRed("Böyle bir komut bulunamadı.");
+    return;
+}
+$commandExecutor->apply();
+

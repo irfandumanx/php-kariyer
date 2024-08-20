@@ -1,0 +1,1 @@
+YETKİNİZ YOK
